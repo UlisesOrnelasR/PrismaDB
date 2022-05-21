@@ -72,7 +72,7 @@ app.put('/explorers/:id', async (req, res) => {
 	return res.json({message: "Actualizado correctamente"});
 });
 
-app.put('/student/:id', async (req, res) => {
+app.put('/students/:id', async (req, res) => {
 	const id = parseInt(req.params.id);
 
 	await prisma.student.update({
@@ -90,6 +90,12 @@ app.put('/student/:id', async (req, res) => {
 app.delete('/explorers/:id', async (req, res) => {
 	const id = parseInt(req.params.id);
 	await prisma.explorer.delete({where: {id: id}});
+	return res.json({message: "Eliminado correctamente"});
+});
+
+app.delete('/students/:id', async (req, res) => {
+	const id = parseInt(req.params.id);
+	await prisma.student.delete({where: {id: id}});
 	return res.json({message: "Eliminado correctamente"});
 });
 
