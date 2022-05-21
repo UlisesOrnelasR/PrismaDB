@@ -72,6 +72,21 @@ app.put('/explorers/:id', async (req, res) => {
 	return res.json({message: "Actualizado correctamente"});
 });
 
+app.put('/student/:id', async (req, res) => {
+	const id = parseInt(req.params.id);
+
+	await prisma.student.update({
+		where: {
+			id: id
+		},
+		data: {
+			lang: req.body.lang
+		}
+	})
+
+	return res.json({message: "Actualizado correctamente"});
+});
+
 app.delete('/explorers/:id', async (req, res) => {
 	const id = parseInt(req.params.id);
 	await prisma.explorer.delete({where: {id: id}});
