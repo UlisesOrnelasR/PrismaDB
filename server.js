@@ -16,6 +16,11 @@ app.get('/explorers', async (req, res) => {
     res.json(allExplorers);
   });
 
+app.get('/students', async (req, res) => {
+    const allStudents =  await prisma.student.findMany({});
+    res.json(allStudents);
+  });
+
 app.get('/explorers/:id', async (req, res) => {
     const id = req.params.id;
     const explorer = await prisma.explorer.findUnique({where: {id: parseInt(id)}});
