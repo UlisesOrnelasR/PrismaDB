@@ -52,8 +52,31 @@ const prisma = new PrismaClient();
                   mission: 'Node'
         },
       });
+    
+    const student1 = await prisma.student.upsert({
+        where: { id: 1 },
+        update: {},
+        create: {
+          name: 'Student1',
+                  lang: 'español',
+                  missionCommander: 'Carlo',
+                  enrollments: 4, 
+        },
+      });
+    
+      const student2 = await prisma.student.upsert({
+        where: { id: 2 },
+        update: {},
+        create: {
+          name: 'Student2',
+                  lang: 'ingles',
+                  missionCommander: 'Fer',
+                  enrollments: 2,
+                  hasCertification: true 
+        },
+      });
 
-    console.log('Create 4 explorers');
+    console.log('Create 5 explorers y 2 students');
   } catch(e) {
     console.error(e);
     process.exit(1);
