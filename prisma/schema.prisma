@@ -20,7 +20,7 @@ model Explorer {
 }
 model Student{
   id   Int   @id @default(autoincrement())
-  name   String?
+  name   String
   lang   String
   missionCommander   String
   enrollments   Int
