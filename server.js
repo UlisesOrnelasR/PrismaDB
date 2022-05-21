@@ -44,6 +44,19 @@ app.post('/explorers', async (req, res) => {
     return res.json({message});
   });
 
+  app.post('/students', async (req, res) => {
+    const student = {
+      name: req.body.name,
+      lang: req.body.lang,
+      missionCommander: req.body.missionCommander,
+      enrollments: req.body.enrollments,
+      hasCertification: req.body.hasCertification
+     };
+    const message = 'Student creado.';
+    await prisma.student.create({data: student});
+    return res.json({message});
+  });
+
 app.put('/explorers/:id', async (req, res) => {
 	const id = parseInt(req.params.id);
 
