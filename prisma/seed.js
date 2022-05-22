@@ -64,7 +64,7 @@ const prisma = new PrismaClient();
         },
       });
     
-      const student2 = await prisma.student.upsert({
+    const student2 = await prisma.student.upsert({
         where: { id: 2 },
         update: {},
         create: {
@@ -76,7 +76,30 @@ const prisma = new PrismaClient();
         },
       });
 
-    console.log('Create 5 explorers y 2 students');
+    const student4 = await prisma.student.upsert({
+        where: { id: 6 },
+        update: {},
+        create: {
+          name: 'Student4',
+                  lang: 'Frances',
+                  missionCommander: 'Carlo',
+                  enrollments: 7,
+                  hasCertification: true 
+        },
+      });
+
+    const student7 = await prisma.student.upsert({
+        where: { id: 7 },
+        update: {},
+        create: {
+          name: 'Student7',
+                  lang: 'Portugues',
+                  missionCommander: 'Fer',
+                  enrollments: 6,
+        },
+      });
+
+    console.log('Create explorers y students');
   } catch(e) {
     console.error(e);
     process.exit(1);
