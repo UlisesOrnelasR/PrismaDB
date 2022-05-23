@@ -13,6 +13,8 @@ const corsOptions = {
   origin: 'http://localhost:8081'
 };
 
+app.use(cors(corsOptions));
+
 app.get('/', (req, res) => {
   res.json({message: 'alive'});
 });
