@@ -115,6 +115,10 @@ const student4 = await prisma.student.upsert({
 #### Todos los endpoints se probaron con POSTMAN
 
 Puedes descargar los archivos de POSTMAN para que los pruebes: [client-launchX.zip](https://github.com/UlisesOrnelasR/PrismaDB/files/8766621/client-launchX.zip)
+Te dejo algunas capturas de pantalla...
+![p3](https://user-images.githubusercontent.com/99143567/170145666-c5ffe8cb-c78b-40c1-a6f1-1b9eb1615ca4.JPG)
+![p2](https://user-images.githubuse![p1](https://user-images.githubusercontent.com/99143567/170145684-bc962a7b-b048-4d36-bc4f-bb54820a7f4b.JPG)
+rcontent.com/99143567/170145676-81587c5e-7b50-4d36-8da2-4a70f679d8e4.JPG)
 
 #### Esto fue la creación de una API de express, que conectamos a una base de datos Postgresql, a contrinuación la conectamos a una app de VUE 
 ## [Cliente Servidor](https://github.com/UlisesOrnelasR/client-launchx)
