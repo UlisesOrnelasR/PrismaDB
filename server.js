@@ -63,7 +63,7 @@ app.post('/explorers', async (req, res) => {
     return res.json({message});
   });
 
-  app.post('/students', async (req, res) => {
+app.post('/students', async (req, res) => {
     const student = {
       name: req.body.name,
       lang: req.body.lang,
@@ -73,6 +73,19 @@ app.post('/explorers', async (req, res) => {
      };
     const message = 'Student creado.';
     await prisma.student.create({data: student});
+    return res.json({message});
+  });
+
+app.post('/missionCommanders', async (req, res) => {
+    const missionCommander = {
+      name: req.body.name,
+      username: req.body.username,
+      mainStack: req.body.mainStack,
+      currentEnrollment: req.body.currentEnrollment,
+      hasAzureCertification: req.body.hasAzureCertification
+     };
+    const message = 'Mission Commander Created.';
+    await prisma.missionCommander.create({data: missionCommander});
     return res.json({message});
   });
 
