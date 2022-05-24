@@ -98,8 +98,67 @@ const prisma = new PrismaClient();
                   enrollments: 6,
         },
       });
+    
+    const mc1 = await prisma.missionCommander.upsert({
+        where: { id: 11 },
+        update: {},
+        create: {
+          name: 'Carlo Gilmar',
+                  username: 'CarloG',
+                  mainStack: 'Elixir',
+                  currentEnrollment: true,
+                  hasAzureCertification:true
+        },
+      });
+  
+    const mc2 = await prisma.missionCommander.upsert({
+        where: { id: 12 },
+        update: {},
+        create: {
+          name: 'Omar Perez',
+                  username: 'Romarpla',
+                  mainStack: 'Security',
+                  currentEnrollment: true,
+                  hasAzureCertification:true
+        },
+      });
 
-    console.log('Create explorers y students');
+    const mc3 = await prisma.missionCommander.upsert({
+        where: { id: 13 },
+        update: {},
+        create: {
+          name: 'Fernanda',
+                  username: 'Imosh',
+                  mainStack: 'Python',
+                  currentEnrollment: true
+        },
+      });
+
+    const mc4 = await prisma.missionCommander.upsert({
+        where: { id: 14 },
+        update: {},
+        create: {
+          name: 'Osvaldo Gabino',
+                  username: 'Gabinito',
+                  mainStack: 'Javascript',
+                  hasAzureCertification:true
+        },
+      });
+    
+    const mc5 = await prisma.missionCommander.upsert({
+        where: { id: 15 },
+        update: {},
+        create: {
+          name: 'Frank Alexis',
+                  username: 'Franky',
+                  mainStack: 'C++',
+                  currentEnrollment: true,
+                  hasAzureCertification:true
+        },
+      });
+
+  
+    console.log('Create explorers, students and MCs');
   } catch(e) {
     console.error(e);
     process.exit(1);
