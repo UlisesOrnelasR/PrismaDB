@@ -28,7 +28,7 @@ model Student{
 }
 model missionCommander{
   id   Int   @id @default(autoincrement())
-  name   String 
+  name   String @unique
   username   String
   mainStack   String
   currentEnrollment   Boolean   @default(false)
