@@ -113,3 +113,5 @@ const student4 = await prisma.student.upsert({
 - Endpoints DELETE
 
 #### Todos los endpoints se probaron con POSTMAN
+
+Puedes descargar los archivos de POSTMAN para que los pruebes: [client-launchX.zip](https://github.com/UlisesOrnelasR/PrismaDB/files/8766621/client-launchX.zip)
