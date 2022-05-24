@@ -1,6 +1,6 @@
 # API: Express + DB 
 
-#### Instalando dependencias de Node
+#### Instalando dependencias de Node📚
 ```
 npm install
 ```
@@ -13,7 +13,7 @@ npm install prisma --save-dev
 #### Inicializa prisma
 `npx prisma init`
 
-#### Crea una base de datos en Postgresql
+#### Crea una base de datos en Postgresql🗂
 `npx prisma init`
 
 #### Modifica el archivo .env con tu usuario y contraseña
@@ -112,7 +112,7 @@ const student4 = await prisma.student.upsert({
 - Endponst PUT
 - Endpoints DELETE
 
-#### Todos los endpoints se probaron con POSTMAN
+#### Todos los endpoints se probaron con POSTMAN✅
 
 Puedes descargar los archivos de POSTMAN para que los pruebes: [client-launchX.zip](https://github.com/UlisesOrnelasR/PrismaDB/files/8766621/client-launchX.zip)
 Te dejo algunas capturas de pantalla...
