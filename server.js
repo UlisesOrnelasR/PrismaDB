@@ -29,6 +29,11 @@ app.get('/students', async (req, res) => {
     res.json(allStudents);
   });
 
+app.get('/missionCommanders', async (req, res) => {
+    const allmissionCommanders =  await prisma.missionCommander.findMany({});
+    res.json(allmissionCommanders);
+  });
+
 app.get('/explorers/:id', async (req, res) => {
     const id = req.params.id;
     const explorer = await prisma.explorer.findUnique({where: {id: parseInt(id)}});
@@ -39,6 +44,12 @@ app.get('/students/:id', async (req, res) => {
     const id = req.params.id;
     const student = await prisma.student.findUnique({where: {id: parseInt(id)}});
     res.json(student);
+  });
+
+app.get('/missionCommanders/:id', async (req, res) => {
+    const id = req.params.id;
+    const missionCommander = await prisma.missionCommander.findUnique({where: {id: parseInt(id)}});
+    res.json(missionCommander);
   });
 
 app.post('/explorers', async (req, res) => {
