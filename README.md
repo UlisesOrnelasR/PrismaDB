@@ -21,7 +21,7 @@ npm install prisma --save-dev
 DATABASE_URL="postgresql://TUUSUARIO:PASSWORD@localhost:5432/explorers_api?schema=public"
 ```
 
-#### en el archivo `prisma/schema.prisma` agrega los modelos de las tablas que necesites, nosotros usaremos tres modelos
+#### En el archivo `prisma/schema.prisma` agrega los modelos de las tablas que necesites, nosotros usaremos tres modelos
 
 ```
 model Explorer {
@@ -120,8 +120,46 @@ Te dejo algunas capturas de pantalla...
 ![p2](https://user-images.githubusercontent.com/99143567/170145806-392ee494-3cc8-43e5-a0cf-934e7ab48c26.JPG)
 ![p1](https://user-images.githubusercontent.com/99143567/170145816-d4b57dc2-0e08-4ee0-8774-47f0c2e2ec72.JPG)
 
+#### Dependencia de ESlint para darle estilo Airbnb al código🤵
+`npm install eslint --save-dev`
+
+Comando para configurar eslint al estilo Airbnb
+`npm init @eslint/config`
+
+Nuestras reglas en el archivo `.eslintrc.js`
+```
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"]
+    }
+}
+```
+Automatiza la ejecución de lint en el `package.json`
+```
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "linter": "node ./node_modules/eslint/bin/eslint.js .",
+    "linter-fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
+  }
+```
+Para ejecutarlo `npm run linter`, para corregir los detalles `npm run linter-fix`
+
 #### Esto fue la creación de una API de express, que conectamos a una base de datos Postgresql, a contrinuación la conectamos a una app de VUE 
 ## [Cliente Servidor](https://github.com/UlisesOrnelasR/client-launchx)
 #### Comming soon
 -Test
--Estilo de codigo como Airbnb
+
